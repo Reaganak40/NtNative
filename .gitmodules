@@ -1,0 +1,6 @@
+[submodule "thirdparty/ntdll"]
+	path = thirdparty/ntdll
+	url = https://github.com/Fyyre/ntdll.git
+[submodule "thirdparty/phnt"]
+	path = thirdparty/phnt
+	url = https://github.com/winsiderss/phnt.git
