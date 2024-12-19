@@ -23,7 +23,7 @@ project "nativerun"
     }
 
     debugargs {
-        "-d \\??\\%{wks.location}bin\\" .. outputFolder .. "\\MyApp\\MyApp.exe"
+        "-d -s \\??\\%{wks.location}bin\\" .. outputFolder .. "\\MyApp\\MyApp.exe"
     }
 
     postbuildcommands
@@ -35,6 +35,7 @@ project "nativerun"
         cppdialect "C++20"
         staticruntime "On"
         systemversion "latest"
+        buildoptions { "/Wall" } -- pedantic warnings
 
         defines
         {

@@ -9,7 +9,7 @@ project_name = "MyApp"
 
 project "MyApp"
     kind "ConsoleApp"
-    language "C++"
+    language "C"
     uuid (os.uuid(project_name .. "UUID"))
     targetdir (binFolder)
     objdir (binObjFolder)
@@ -28,6 +28,9 @@ project "MyApp"
     {
     }
 
+    pchheader "pch.h"
+    pchsource "pch.c"
+
     flags { "NoRuntimeChecks" }
 
     filter "system:windows"
@@ -38,6 +41,7 @@ project "MyApp"
 
         defines
         {
+            'EXE_NAME="' .. project_name ..'"'
         }
 
     filter "architecture:x64"
